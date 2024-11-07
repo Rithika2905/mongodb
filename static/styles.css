@@ -1,0 +1,13 @@
+body, h1{
+    margin: 0;
+    padding: 0;
+}
+body{ font-family: 'Times New Roman', Times, serif;}
+
+h1{ text-align: center; color: brown; background-color: antiquewhite; padding: 20px}
+
+div{max-width: 600px; padding: 20px;}
+
+button{color: black; background-color: rgb(202, 218, 212); border-radius: 5px;}
+
+button:hover{background-color: bisque;}

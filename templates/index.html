@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <h1>Mongo Demo</h1>
+    <div class ="content">
+        <form method ="POST">
+            <p>
+                <label for="content"> Task </label>
+            </p>
+            <p>
+                <input type="text" name="content">
+            </p>
+            <p>
+                <label for="degree"> Degree </label>
+            </p>
+            <p>
+                <input id="1" name ="degree" type="radio" value="important" required>
+                <label for="1"> Important </label>
+            </p>
+            <p>
+                <input id="2" name ="degree" type="radio" value="notimportant" required>
+                <label for="2"> Not Important </label>
+            </p>
+            <button>Submit</button>
+        </form>
+
+        {%for task in todos%}
+        <div>
+            <p> {{task['content']}}  {{task['degree']}} </p>
+        </div>
+        <form method="POST"  action="{{url_for('delete', id=task['_id'])}}">
+
+            <input type="submit" value="delete"/>
+        </form>
+        {%endfor%}
+
+    </div>
+</body>
+</html>
+
